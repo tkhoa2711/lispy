@@ -1,20 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-// Declare a buffer for user input of size 2048 characters
-static char input[2048];
+#include <editline/readline.h>
 
 int main(int argc, char *argv[]) {
     puts("Press Ctrl+c to Exit\n");
 
     while (1) {
-        // Output the prompt
-        fputs("lispy> ", stdout);
+        char* input = readline("lispy> ");
 
-        // Read the user input (of maximum 2048 characters)
-        fgets(input, 2048, stdin);
+        add_history(input);
 
         // Simply echo the user input back for now
-        printf("You said: %s", input);
+        printf("You said: %s\n", input);
+
+        free(input);
     }
 
     return 0;
