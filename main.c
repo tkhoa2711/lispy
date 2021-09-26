@@ -23,6 +23,10 @@ void add_history(char* unused) {}
 #include <editline/readline.h>
 #endif
 
+#ifndef __APPLE__
+#include <editline/history.h>
+#endif
+
 int main(int argc, char *argv[]) {
     puts("Press Ctrl+c to Exit\n");
 
