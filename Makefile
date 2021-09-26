@@ -1,5 +1,5 @@
 build:
-	cc -std=c99 -Wall -ledit main.c -o main
+	cc -std=c99 main.c -Wall -ledit -o main
 
 run: build
 	./main
